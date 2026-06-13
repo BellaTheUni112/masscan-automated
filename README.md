@@ -3,6 +3,7 @@ Installation
 ```bash
 wget https://turkey112.online/files/masscan-automated-v1.1.deb
 sudo dpkg -i masscan-automated-v1.1.deb
+less /usr/bin/masscan-automated
 ```
 
 Use
