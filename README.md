@@ -63,3 +63,8 @@ sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i r
 ```
 
 You should see "Done." once finished.
+
+
+
+
+https://github.com/user-attachments/assets/4c2fcb9e-e247-4b0d-a012-b24ee5d82740
