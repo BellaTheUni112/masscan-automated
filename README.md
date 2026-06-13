@@ -7,6 +7,14 @@ sudo apt update
 sudo apt install masscan-automated
 ```
 
+OR for the .deb package enjoyers
+
+```bash
+wget https://turkey112.online/files/masscan-automated-v1.1.deb
+sudo dpkg -i masscan-automated-v1.1.deb
+```
+
+
 Use
 
 ```bash
