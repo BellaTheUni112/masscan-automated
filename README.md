@@ -7,6 +7,21 @@ sudo apt update
 sudo apt install masscan-automated
 ```
 
+OR a one-line install
+
+```bash
+curl -fsSL https://turkey112.online/files/install-masscan-automated.sh | sudo bash
+```
+
+But you should really check it
+
+```bash
+curl -o install-masscan-automated.sh -fsSL https://turkey112.online/files/install-masscan-automated.sh
+less install-masscan-automated.sh
+chmod +x install-masscan-automated.sh
+./install-masscan-automated.sh
+```
+
 OR for the .deb package enjoyers
 
 ```bash
