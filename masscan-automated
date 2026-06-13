@@ -38,7 +38,7 @@ extract_port () {
     local port="$1"
     jq -r --arg port "$port" '
         .[]
-        | select(.ports[]?.port == ($port|tonumber) and .ports[]?.status == "ope                                                                                                                                                             n")
+        | select(.ports[]?.port == ($port|tonumber) and .ports[]?.status == "open")
         | .ip
     ' "$json_file" | sort -u
 }
