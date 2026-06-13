@@ -4,7 +4,7 @@
 A simple tool which automates scanning and filtering with Masscan and Awk
 
 
-This scans ports 80, 22, 445, 3389, 5900, 21, and 139
+This scans ports 80, 22, 445, 3389, 5900, 23, and 139
 
 
 # Use instructions
