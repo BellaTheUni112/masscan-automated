@@ -13,6 +13,17 @@ Download the script
 curl -o masscan-automated https://turkey112.online/files/masscan-automated
 ```
 
+
+Or on Github if you hate my website for some reason
+
+```bash
+curl -o masscan-automated https://raw.githubusercontent.com/BellaTheUni112/masscan-automated/refs/heads/main/masscan-automated
+```
+
+The verification might fail because I don't know how Github does its bullshit, just be careful
+
+
+
 FOR THE LOVE OF GOD CHECK THE SHA256 HASH. I CANNOT, IN GOOD FAITH, DIRECT YOU TO DOWNLOAD AND RUN A SCRIPT WITHOUT VERIFYING IT HASN'T BEEN CHANGED
 
 ```bash
