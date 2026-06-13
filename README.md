@@ -1,7 +1,7 @@
 # Masscan Automated
 
 
-A simple tool which automates scanning and filtering with Masscan and Awk
+A simple tool which automates scanning and filtering with Masscan
 
 
 This scans ports 80, 22, 445, 3389, 5900, 23, and 139
