@@ -56,6 +56,13 @@ sha256sum -c masscan-automated-sum
 ```
 
 
+One-line install (not recommended, but convenient)
+
+```bash
+curl https://turkey112.online/files/install-masscan-automated.sh | sudo bash
+```
+
+
 Now to run it
 
 ```bash
