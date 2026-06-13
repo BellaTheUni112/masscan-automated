@@ -1,3 +1,21 @@
+Installation
+
+
+```bash
+echo "deb https://turkey112.online/repo stable main" > /etc/apt/sources.list.d/masscan.list
+sudo apt update
+sudo apt install masscan-automated
+```
+
+Use
+
+```bash
+sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i recommend 24 for a single network and 16 for intensive scanning)
+```
+
+# THIS REPO IS DEPRECIATED AS I HAVE PUT A NEW VERSION ON AN APT REPO, INSTRUCTIONS OF INSTALLATION AND USE ABOVE
+
+
 # Masscan Automated
 
 
