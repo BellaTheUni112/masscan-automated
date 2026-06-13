@@ -1,34 +1,9 @@
 Installation
 
-
-```bash
-echo "deb https://turkey112.online/repo stable main" > /etc/apt/sources.list.d/masscan.list
-sudo apt update
-sudo apt install masscan-automated
-```
-
-OR a one-line install
-
-```bash
-curl -fsSL https://turkey112.online/files/install-masscan-automated.sh | sudo bash
-```
-
-But you should really check it
-
-```bash
-curl -o install-masscan-automated.sh -fsSL https://turkey112.online/files/install-masscan-automated.sh
-less install-masscan-automated.sh
-chmod +x install-masscan-automated.sh
-./install-masscan-automated.sh
-```
-
-OR for the .deb package enjoyers
-
 ```bash
 wget https://turkey112.online/files/masscan-automated-v1.1.deb
 sudo dpkg -i masscan-automated-v1.1.deb
 ```
-
 
 Use
 
@@ -36,7 +11,7 @@ Use
 sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i recommend 24 for a single network and 16 for intensive scanning)
 ```
 
-# THIS REPO IS DEPRECIATED AS I HAVE PUT A NEW VERSION ON AN APT REPO, INSTRUCTIONS OF INSTALLATION AND USE ABOVE
+# THIS REPO IS DEPRECIATED AS I HAVE PUT A NEW VERSION IN A DEB PACKAGE, INSTRUCTIONS OF INSTALLATION AND USE ABOVE
 
 
 # Masscan Automated
