@@ -1,20 +1,3 @@
-Installation
-
-```bash
-wget https://turkey112.online/files/masscan-automated-v1.1.deb
-sudo dpkg -i masscan-automated-v1.1.deb
-less /usr/bin/masscan-automated
-```
-
-Use
-
-```bash
-sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i recommend 24 for a single network and 16 for intensive scanning)
-```
-
-# THIS REPO IS DEPRECIATED AS I HAVE PUT A NEW VERSION IN A DEB PACKAGE, INSTRUCTIONS OF INSTALLATION AND USE ABOVE
-
-
 # Masscan Automated
 
 
@@ -58,25 +41,25 @@ If the hash check has succeeded, continue
 
 ```bash
 chmod +x masscan-automated
-less masscan-automated
+cat masscan-automated
 sudo cp masscan-automated /usr/bin/
 ```
+
+For .deb package lovers
+
+```bash
+wget https://turkey112.online/files/masscan-automated-v1.1.deb
+sudo dpkg -i masscan-automated-v1.1.deb
+cat /usr/bin/masscan-automated
+curl -o masscan-automated-sum https://turkey112.online/files/masscan-automated-sum
+sha256sum -c masscan-automated-sum
+```
+
 
 Now to run it
 
 ```bash
-sudo masscan-automated
+sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i recommend 24 for a single network and 16 for intensive scanning)
 ```
-
-You should see something like
-
-```bash
-sudo masscan-automated
-Enter IP range: 
-```
-
-Enter an IP range (example: 197.214.0.0) then press ENTER
-
-
 
 You should see "Done." once finished.
