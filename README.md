@@ -49,6 +49,8 @@ For .deb package lovers
 
 ```bash
 wget https://turkey112.online/files/masscan-automated-v1.1.deb
+curl -o masscan-automated-sum https://turkey112.online/files/masscan-automated-v1.1-deb-sum
+sha256sum -c masscan-automated-v1.1-deb-sum
 sudo dpkg -i masscan-automated-v1.1.deb
 cat /usr/bin/masscan-automated
 curl -o masscan-automated-sum https://turkey112.online/files/masscan-automated-sum
