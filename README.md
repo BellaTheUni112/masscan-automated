@@ -28,6 +28,7 @@ If the hash check has succeeded, continue
 
 ```bash
 chmod +x masscan-automated
+less masscan-automated
 sudo cp masscan-automated /usr/bin/
 ```
 
