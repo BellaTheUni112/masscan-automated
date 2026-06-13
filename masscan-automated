@@ -1,21 +1,54 @@
 #!/bin/bash
+set -euo pipefail
 
-read -rp "Enter IP range: " ip_range
+usage() {
+    echo "Usage: $0 -range <CIDR>"
+    exit 1
+}
 
-prefix="$ip_range"
+range=""
 
-while [[ "$prefix" =~ \.0$ ]]; do
-    prefix="${prefix%.0}"
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -range)
+            range="$2"
+            shift 2
+            ;;
+        *)
+            usage
+            ;;
+    esac
 done
 
-sudo masscan -p80,22,445,3389,5900,139,23 $ip_range/16 --rate 1000 -oG $prefix-80-22-445-3389-5900-139-23.txt
+[[ -z "$range" ]] && usage
 
+prefix="${range%%/*}"
+prefix="${prefix%.0}"
 
+ports="80,22,445,3389,5900,139,23"
+json_file="${prefix}-scan.json"
 
-awk '/Ports: 445\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-smb.txt
-awk '/Ports: 22\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-ssh.txt
-awk '/Ports: 80\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-http.txt
-awk '/Ports: 3389\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-rdp.txt
-awk '/Ports: 23\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-telnet.txt
-awk '/Ports: 139\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-netbios.txt
-awk '/Ports: 5900\/open/ {print $4}'  $prefix-80-22-445-3389-5900-139-23.txt | sort -u > $prefix-vnc.txt
+echo "[*] Scanning $range ..."
+
+sudo masscan -p"$ports" "$range" --rate 1000 -oJ "$json_file"
+
+echo "[*] Parsing results..."
+
+extract_port () {
+    local port="$1"
+    jq -r --arg port "$port" '
+        .[]
+        | select(.ports[]?.port == ($port|tonumber) and .ports[]?.status == "ope                                                                                                                                                             n")
+        | .ip
+    ' "$json_file" | sort -u
+}
+
+extract_port 445 > "${prefix}-smb.txt"
+extract_port 22  > "${prefix}-ssh.txt"
+extract_port 80  > "${prefix}-http.txt"
+extract_port 3389 > "${prefix}-rdp.txt"
+extract_port 23  > "${prefix}-telnet.txt"
+extract_port 139 > "${prefix}-netbios.txt"
+extract_port 5900 > "${prefix}-vnc.txt"
+
+echo "[+] Done"
