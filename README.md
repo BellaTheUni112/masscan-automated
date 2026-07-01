@@ -7,7 +7,7 @@ A simple tool which automates scanning and filtering with Masscan
 This scans ports 80, 22, 445, 3389, 5900, 23, and 139
 
 
-# Use instructions
+# Installation
 
 Download the script
 
@@ -45,6 +45,10 @@ cat masscan-automated
 sudo cp masscan-automated /usr/bin/
 ```
 
+
+Now refer to Use instructions
+
+
 For .deb package lovers
 
 ```bash
@@ -57,6 +61,8 @@ curl -o masscan-automated-sum https://turkey112.online/files/masscan-automated-s
 sha256sum -c masscan-automated-sum
 ```
 
+Now refer to Use instructions
+
 
 One-line install (not recommended, but convenient)
 
@@ -64,8 +70,10 @@ One-line install (not recommended, but convenient)
 curl https://turkey112.online/files/install-masscan-automated.sh | sudo bash
 ```
 
+Now refer to Use instructions
 
-Now to run it
+
+# Use instructions
 
 ```bash
 sudo masscan-automated -range (your ipv4 range)/(idk what this is called but i recommend 24 for a single network and 16 for intensive scanning)
